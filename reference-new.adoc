@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Cloud Volumes ONTAP 9.10.0에는 몇 가지 새로운 기능과 향상된 기능이 포함되어 있습니다. 
+---
+= Cloud Volumes ONTAP 9.10.0의 새로운 기능
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.10.0에는 몇 가지 새로운 기능과 향상된 기능이 포함되어 있습니다.
+
+최신 버전의 Cloud Manager에는 추가 기능과 개선 사항도 포함되어 있습니다. 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Cloud Manager 릴리즈 노트"^] 를 참조하십시오.
+
+
+
+== 9.10.0 GA(2021년 10월 4일)
+
+9.10.0 GA 릴리즈는 AWS, Azure 및 Google Cloud에서 사용할 수 있습니다. 이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.
+
+
+
+=== 쓰기 성능 향상
+
+높은 쓰기 속도를 설정하면 Cloud Volumes ONTAP 쓰기 성능이 향상됩니다.
+
+
+
+=== Azure에서 NVRAM 디스크의 크기가 증가되었습니다
+
+Azure의 새로운 Cloud Volumes ONTAP 시스템에서 NVRAM 디스크 크기가 128GiB에서 512GiB로 증가했습니다.
+
+
+NOTE: 단일 노드 시스템을 선택하고 가상 시스템이 Ultra SSD를 지원하는 경우, 시스템은 512GiB Premium SSD가 아닌 NVRAM에 32GiB Ultra SSD를 사용합니다.
+
+
+
+== Cloud Manager Connector의 필수 버전입니다
+
+새로운 Cloud Volumes ONTAP 9.10.0 시스템을 배포하고 기존 시스템을 9.10.0으로 업그레이드하려면 Cloud Manager Connector가 버전 3.9.11 이상을 실행해야 합니다.
+
+
+
+== 노트 업그레이드
+
+* Cloud Volumes ONTAP 업그레이드는 Cloud Manager에서 완료해야 합니다. System Manager 또는 CLI를 사용하여 Cloud Volumes ONTAP를 업그레이드해서는 안 됩니다. 이렇게 하면 시스템 안정성에 영향을 줄 수 있습니다.
+* 9.9.1 릴리즈에서 Cloud Volumes ONTAP 9.10.0으로 업그레이드할 수 있습니다. Cloud Manager에서 기존 Cloud Volumes ONTAP 9.9.1 시스템을 9.10.0 릴리즈로 업그레이드하라는 메시지가 표시됩니다.
++
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Cloud Manager에서 알림을 받을 때 업그레이드하는 방법에 대해 알아보십시오"^].
+
+* 단일 노드 시스템을 업그레이드하면 시스템이 최대 25분 동안 오프라인 상태로 전환되고 이 동안 I/O가 중단됩니다.
+* HA 2노드 업그레이드는 무중단으로 I/O를 업그레이드할 수 있으며 이 무중단 업그레이드 프로세스 중에 각 노드가 동시 업그레이드되어 클라이언트에 I/O를 계속 제공합니다.
+
+
+
+
+=== C4, M4 및 R4 인스턴스 유형
+
+9.8 릴리스, C4, M4 및 R4 인스턴스 유형부터 새로운 Cloud Volumes ONTAP 시스템에서는 지원되지 않습니다. C4, M4 또는 R4 인스턴스 유형에서 실행 중인 기존 Cloud Volumes ONTAP 시스템이 있는 경우에도 이 릴리즈로 업그레이드할 수 있습니다.
+
+C5, M5 또는 R5 인스턴스 제품군의 인스턴스 유형으로 변경하는 것이 좋습니다.
+
+
+
+=== DS3_v2
+
+9.9.1 릴리즈부터 DS3_v2 VM 유형은 더 이상 신규 및 기존 Cloud Volumes ONTAP 시스템에서 지원되지 않습니다. 이 VM 유형에서 실행 중인 기존 시스템이 있는 경우 9.10.0으로 업그레이드하기 전에 VM 유형을 변경해야 합니다.
